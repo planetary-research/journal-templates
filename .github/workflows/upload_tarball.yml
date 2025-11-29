@@ -1,0 +1,34 @@
+name: upload_tarball
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build tarball
+        id: tarball
+        run: |
+          TAG="${{ github.event.release.tag_name }}"
+          ARCHIVE="planetary-research-template-${TAG}.tar.gz"
+          tar -czf "$ARCHIVE" \
+            README.md AGENTS.md \
+            planetary.cls submission-BIBLATEX.tex SuppInfo.tex references.bib \
+            by.png cc.png planet.png journal_logo.pdf
+          echo "archive=$ARCHIVE" >> "$GITHUB_OUTPUT"
+
+      - name: Upload release asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ steps.tarball.outputs.archive }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
