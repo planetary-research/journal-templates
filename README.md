@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# journal-templates
-=======
 # Planetary Research — LaTeX Author Template (Review/Final)
 
 Official LaTeX class and templates for submissions to *Planetary Research*. The default mode is **review** (line-numbered, 12pt); pass `final` for the camera-ready layout (11pt, right-aligned title/authors, adjusted margins).
@@ -56,4 +53,3 @@ Generate (after installing LaTeX/ImageMagick):
 
 ## License and support
 Released under the MIT License unless stated otherwise. For help, contact `templates@planetary-research.org`.
->>>>>>> 535b63c (Add templates and workflow)
