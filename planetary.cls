@@ -70,9 +70,9 @@
 \pagestyle{plain}
 
 % ---------------- Helpers -----------------
-\newcommand{\keywords}[1]{\vspace{1em}\noindent\textbf{Keywords: } #1}
+\newcommand{\summary}[1]{\small\vspace{1em}\noindent\textbf{Summary: } #1}
 
-\newcommand{\mstype}[1]{\vspace{1em}\noindent\textbf{Manuscript type: } #1}
+\newcommand{\mstype}[1]{\small\vspace{1em}\noindent\textbf{Manuscript type: } #1}
 
 
 % ------------- Review vs Final ------------
