@@ -17,7 +17,8 @@ pdflatex submission-BIBLATEX.tex && biber submission-BIBLATEX && pdflatex submis
 - `manuscript.tex` — main manuscript template that uses `biblatex`/`biber`.
 - `supplmentary-materials.tex` — supplementary material template matching the class defaults.
 - `references.bib` — sample bibliography.
-- `PR_template.docx` — docx/odt template.
+- `PR_manuscript.docx` — docx/odt template.
+- `PR_supplementary_materials.docx` — docx/odt template for supplementary materials.
 - Assets: `journal_logo.pdf`, `planet.png`, `cc.png`, `by.png`.
 
 ## Quick start
