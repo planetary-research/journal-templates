@@ -14,8 +14,8 @@ pdflatex submission-BIBLATEX.tex && biber submission-BIBLATEX && pdflatex submis
 
 ## Repository layout
 - `planetary.cls` — journal class (v1.2, 27 Nov 2025).
-- `submission-BIBLATEX.tex` — main manuscript template that uses `biblatex`/`biber`.
-- `SuppInfo.tex` — supplementary material template matching the class defaults.
+- `manuscript.tex` — main manuscript template that uses `biblatex`/`biber`.
+- `supplmentary-materials.tex` — supplementary material template matching the class defaults.
 - `references.bib` — sample bibliography.
 - `PR_template.docx` — docx/odt template.
 - Assets: `journal_logo.pdf`, `planet.png`, `cc.png`, `by.png`.
