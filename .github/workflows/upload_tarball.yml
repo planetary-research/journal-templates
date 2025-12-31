@@ -11,7 +11,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -19,16 +19,20 @@ jobs:
         id: tarball
         run: |
           TAG="${{ github.event.release.tag_name }}"
-          ARCHIVE="planetary-research-template-${TAG}.tar.gz"
-          tar -czf "$ARCHIVE" \
+          ARCHIVE_LATEX="planetary-research-latex-templates.tar.gz"
+          ARCHIVE_DOCX="planetary-research-docx-templates.zip"
+          tar -czf "$ARCHIVE_LATEX" \
             README.md AGENTS.md \
-            planetary.cls submission-BIBLATEX.tex SuppInfo.tex references.bib \
-            assets/by.png assets/cc.png figures/planet.png assets/journal_logo.pdf
-          echo "archive=$ARCHIVE" >> "$GITHUB_OUTPUT"
-
+            planetary.cls manuscript.tex supplementary-materials.tex references.bib \
+            assets/by.png assets/cc.png assets/journal_logo.pdf \
+            assets/frontpage.png figures/planet.png
+          zip "$ARCHIVE_DOCX" \
+            PR_manuscript.docx PR_supplementary_materials.docx
       - name: Upload release asset
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
-          files: ${{ steps.tarball.outputs.archive }}
+          files: |
+            $ARCHIVE_LATEX
+            $ARCHIVE_DOCX
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
