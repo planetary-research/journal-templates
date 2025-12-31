@@ -1,0 +1,154 @@
+% Planetary Research - A diamond open access journal
+% Author Submission Template
+% Version: 1.2 – 27 Nov 2025
+% options: review (for submissions), final (for preprints)
+\documentclass[review]{planetary}
+
+% -------------------- Title block --------------------
+% - Fill in title
+\title{<Article Title>}
+% -------------------- Author block --------------------
+% - Fill in authors, ORCIDs, and affiliations
+\author[1,*]{First Author\,\orcidlink{0000-0000-0000-0000}}
+\author[2]{Second Author\,\orcidlink{0000-0000-0000-0000}}
+\affil[1]{Affiliation of First Author, City, Country, ROR ID}
+\affil[2]{Affiliation of Second Author, City, Country, ROR ID}
+\affil[*]{\textit{Corresponding author:} First Author — \texttt{first.author@university.email}}
+
+% -------------------- BIB FILE --------------------
+\addbibresource{references.bib} % replace by the name of your .bib file
+
+% -------------------- Date --------------------
+\date{\small Submission date: \today}
+
+% -------------------- Document --------------------
+\begin{document}
+
+% --------------------------------------------------
+\maketitle
+\thispagestyle{firstpage}
+
+% -------------------- Manuscript type -------------
+% The manuscript type must be one of:
+%     Article, Review, Letter, Numerical code, Dataset,
+%     Missions and instrumentation, Introduction,
+%     Commentary, or Editorial.
+\mstype{Article}
+
+% -------------------- Summary --------------------
+\summary{Provide a short summary that is 350 or fewer characters in length. This summary will appear before the manuscript abstract and will also appear in the issue's table of contents. Summaries should in general be written in full sentences, though other formats may be considered when they respect the character limit.}
+
+% -------------------- Abstract --------------------
+\begin{abstract}
+All submissions to Planetary Research must use the official journal template. By using this template, the authors ensure that all metadata required by the journal are provided, that all elements of the manuscript are present, and that the manuscript is formatted according to the journal's standards. The use of the journal template also ensures that the manuscript can be processed as part of the journal's post-acceptance production pipeline. Manuscript submissions that do not follow the journal's submission guidelines will be declined to be reviewed. The abstract must contain 250 words or less, without line breaks. It should provide a clear understanding of the work without requiring the reader to consult the full article. The abstract must be self-contained: it should not include references, and any abbreviations or acronyms must be introduced. The abstract should provide the context or background for the study and should state the study's purpose, basic procedures, main findings, and principal conclusions.
+\end{abstract}
+
+\vfill
+\noindent
+\begin{tabular}{p{0.01\textwidth} p{0.32\textwidth} p{0.01\textwidth} p{0.43\textwidth} p{0.1\textwidth}}
+\cline{1-5}
+\scriptsize{\textcopyright}
+& \scriptsize{The Author(s) 2026.}
+&
+& \multirow{2}{*}{\parbox{0.43\textwidth}{\vspace{1mm}\scriptsize{This work is licensed under a \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution License 4.0} which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.}}}
+& \vspace{1mm}\includegraphics[height=1.5em]{assets/cc.png}\hspace{0.15em}\includegraphics[height=1.5em]{assets/by.png}
+\end{tabular}
+
+\newpage
+
+% -------------------- Main Sections --------------------
+\section{Introduction}
+
+All elements required for compilation must be supplied and compilation should be error-free.
+
+Please refrain from using any self-made definitions ("newcommand") since these will be removed during the processing of your text. If you use typing abbreviations, search and replace them before submitting your manuscript.
+
+\subsection{Subsection}
+
+Sections and subsections should be numbered, with a maximum of 3 levels (1.; 1.1.; 1.1.1.).
+
+% --------------------- Figure example ---------------------------
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/planet.png}
+    \caption{All lettering (symbols, numbers) in figures must be consistent in style and size across all illustrations and large enough to ensure legibility. Each figure and table must be accompanied by a concise, explanatory caption. Captions must include any necessary credits if portions of the figure are not original. Each figure must correspond to a single, separate file: the use of commands such as subfigure or equivalent packages is not allowed; only one "includegraphics" command per figure is permitted. For further information, see the figures section in the author submission guidelines, \href{https://planetary-research.org/submission-guidelines}{https://planetary-research.org/submission-guidelines}.}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsubsection{Sub-subsection}
+
+Authors should make the best possible use of cross-references when citing tables, figures and references. References should be cited in sentences, such as~\textcite{becker2015phd}, \textcite{Rudolph2020}, \textcite{bagnasco2017nirspec}, and \textcite{Breuer2015}. References can also be cited between brackets~\parencites{dressler2006nasa,Neukumetal2001a,Wieczorek2022-preprint,SJOGRENdataset}. All figures and tables should be cited in the text (see Table~\ref{tab:example_dummy} and Figure~\ref{fig:enter-label}). Numbered equations can also be cited (see Eq.~\eqref{eq:loiHooke}). As an example, this is Hooke's law:
+
+% ---------------------- Equation example -----------------------
+\begin{equation}
+     \sigma^{ij}({\bf x},t)
+     \;=\;
+     \sigma_0^{ij}({\bf x},t)
+     \;+\;
+     c_0^{ijkl}({\bf x})
+     \,
+     \varepsilon^{kl}({\bf x},t)\ ,
+     \label{eq:loiHooke}
+\end{equation}
+where the term
+$ \sigma_0^{ij}({\bf x},t) $
+is called the \emph{pre-stress}, and the coefficients
+$ c_0^{ijkl}({\bf x}) $
+are the \emph{elastic constants}.
+
+%---------------------Table example ---------------------
+\begin{table}[!ht]
+    \centering
+    \renewcommand{\arraystretch}{1.0}
+    \footnotesize{
+        \begin{tabular}{c c}
+            \toprule
+            \textbf{Name} & \textbf{Variable} \\
+            \hline
+            Dummy parameter A before event & $\alpha_{\text{before}}$ \\
+            Dummy parameter B before event & $\beta_{\text{before}}$ \\
+            Sum of Gaussian differences in A & $\Sigma\text{DoG}(\Delta\alpha)$ \\
+            \textit{Normalized Dummy Index} & NDI \\
+            \hline
+        \end{tabular}}
+        \caption{Example table with placeholder content. Replace labels and symbols as needed.}
+        \label{tab:example_dummy}
+\end{table}
+
+
+\section*{Open science declarations}
+
+\textbf{Acknowledgements}. Specify contributions that require acknowledgment but that do not warrant authorship. This may include acknowledgments of technical assistance, materials or financial support. When persons are mentioned in the acknowledgments, the corresponding author should request their permission to appear in the text.
+
+\textbf{Author contributions.} List here the details of each of the author's contributions to the work using the Contributor Role Taxonomy (CRediT, \href{https://credit.niso.org/}{https://credit.niso.org/}). These roles include: Conceptualization, Data curation, Formal analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing (original draft), and Writing (review \& editing). Only those roles that are appropriate should be specified. These roles are summarized in the journal's authorship policies: \href{https://planetary-research.org/authorship}{https://planetary-research.org/authorship}.
+
+\textbf{Code availability.} Numerical codes must both be findable and accessible according to FAIR principles (\href{https://www.go-fair.org/fair-principles/}{https://www.go-fair.org/fair-principles/}). Findable means that the code can be located using a persistent identifier, such as a software heritage identifier SWHID, an astrophysics source code library identifier ASCL, or a DOI. The conditions under which the code and software used in a manuscript can be accessed must be described either on the landing page of the code or in the code archive. If the code is restricted and requires credentials to be accessed, the exact conditions under which the credentials can be obtained should be provided. For further information, see the journal's Open Science policies: \href{https://planetary-research.org/open-science}{https://planetary-research.org/open-science}.
+
+\textbf{Data availability.} Any data that were used or generated as part of the study and that are not found in the manuscript and supplement must be uploaded to a public data repository before the article is accepted for publication. The datasets and any accompanying metadata and documentation need to be made available to the reviewers during the peer-review process. For further information, see the journal's Open Science policies: \href{https://planetary-research.org/open-science}{https://planetary-research.org/open-science}.
+
+\textbf{Funding.} All sources of funding for the work must be disclosed. For work funded by a research agency, the following information must be provided: The name of the funding agency, the name of the funding program, the title of the funded project, and the grant number or funding reference.
+
+\textbf{Competing interests.} All manuscripts must declare any real or perceived conflicts of interest. Competing interests may include both financial and non-financial interests such as past or present employment, consulting activity, financing, intellectual property, ownership of financial assets, or advisory roles. In the case where there are no competing interests, one can use the statement: The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+
+% -------------------- Appendix --------------------
+\appendix
+\section{Appendix Title}
+
+% -------------------- Bibliography --------------------
+\printbibliography
+
+% -------------------- License & copyright --------------------
+\vfill
+
+\noindent
+\begin{tabular}{p{0.01\textwidth} p{0.32\textwidth} p{0.01\textwidth} p{0.43\textwidth} p{0.1\textwidth}}
+\cline{1-5}
+\scriptsize{\textcopyright}
+& \scriptsize{The Author(s) 2026.}
+&
+& \multirow{2}{*}{\parbox{0.43\textwidth}{\vspace{1mm}\scriptsize{This work is licensed under a \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution License 4.0} which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.}}}
+& \vspace{1mm}\includegraphics[height=1.5em]{assets/cc.png}\hspace{0.15em}\includegraphics[height=1.5em]{assets/by.png}
+\end{tabular}
+
+\end{document}
