@@ -59,7 +59,7 @@
 \makeatletter
 \fancypagestyle{firstpage}{%
   \fancyhf{}%
-  \lhead{\includegraphics[height=1.2cm]{journal_logo}}%
+  \lhead{\includegraphics[height=1.2cm]{assets/journal_logo}}%
   \rhead{\textbf{\large \@title}}%
   \renewcommand{\headrulewidth}{0pt}%
   \renewcommand{\footrulewidth}{0pt}%

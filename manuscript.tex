@@ -1,7 +1,8 @@
 % Planetary Research - A diamond open access journal
 % Author Submission Template
 % Version: 1.2 – 27 Nov 2025
-\documentclass{planetary}
+% options: review (for submissions), final (for preprints)
+\documentclass[review]{planetary}
 
 % -------------------- Title block --------------------
 % - Fill in title
@@ -16,15 +17,14 @@
 
 % -------------------- BIB FILE --------------------
 \addbibresource{references.bib} % replace by the name of your .bib file
+
 % -------------------- Date --------------------
 \date{\small Submission date: \today}
 
 % -------------------- Document --------------------
 \begin{document}
 
-
 % --------------------------------------------------
-
 \maketitle
 \thispagestyle{firstpage}
 
@@ -51,7 +51,7 @@ All submissions to Planetary Research must use the official journal template. By
 & \scriptsize{The Author(s) 2026.}
 &
 & \multirow{2}{*}{\parbox{0.43\textwidth}{\vspace{1mm}\scriptsize{This work is licensed under a \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution License 4.0} which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.}}}
-& \vspace{1mm}\includegraphics[height=1.5em]{cc.png}\hspace{0.15em}\includegraphics[height=1.5em]{by.png}
+& \vspace{1mm}\includegraphics[height=1.5em]{assets/cc.png}\hspace{0.15em}\includegraphics[height=1.5em]{assets/by.png}
 \end{tabular}
 
 \newpage
@@ -70,22 +70,14 @@ Sections and subsections should be numbered, with a maximum of 3 levels (1.; 1.1
 % --------------------- Figure example ---------------------------
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.3\textwidth]{planet.png}
-    \caption{All lettering (symbols, numbers) in figures must be consistent in style and size across all illustrations and large enough to ensure legibility. Each figure and table must be accompanied by a concise, explanatory caption. Captions must include any necessary credits if portions of the figure are not original. Each figure must correspond to a single, separate file: the use of commands such as subfigure or equivalent packages is not allowed; only one "includegraphics" command per figure is permitted. For further information, see the figures section in the author submission guidelines, \href{https://planetary-research.org/submission-guidelines}{https://planetary-research.org/submission-guidelines}}
+    \includegraphics[width=0.3\textwidth]{figures/planet.png}
+    \caption{All lettering (symbols, numbers) in figures must be consistent in style and size across all illustrations and large enough to ensure legibility. Each figure and table must be accompanied by a concise, explanatory caption. Captions must include any necessary credits if portions of the figure are not original. Each figure must correspond to a single, separate file: the use of commands such as subfigure or equivalent packages is not allowed; only one "includegraphics" command per figure is permitted. For further information, see the figures section in the author submission guidelines, \href{https://planetary-research.org/submission-guidelines}{https://planetary-research.org/submission-guidelines}.}
     \label{fig:enter-label}
 \end{figure}
 
 \subsubsection{Sub-subsection}
 
-Authors should make the best possible use of cross-references when citing tables, figures and references.
-
-References should be cited in sentences, such as~\textcite{becker2015phd}, \textcite{Rudolph2020}, \textcite{bagnasco2017nirspec}, and \textcite{Breuer2015}.
-
-References can also be cited between brackets~\parencites{dressler2006nasa,Neukumetal2001a,Wieczorek2022-preprint,SJOGRENdataset}.
-
-All figures and tables should be cited in the text (see Table~\ref{tab:example_dummy} and Figure~\ref{fig:enter-label}).
-
-Numbered equations can also be cited (see Eq.~\eqref{eq:loiHooke}).
+Authors should make the best possible use of cross-references when citing tables, figures and references. References should be cited in sentences, such as~\textcite{becker2015phd}, \textcite{Rudolph2020}, \textcite{bagnasco2017nirspec}, and \textcite{Breuer2015}. References can also be cited between brackets~\parencites{dressler2006nasa,Neukumetal2001a,Wieczorek2022-preprint,SJOGRENdataset}. All figures and tables should be cited in the text (see Table~\ref{tab:example_dummy} and Figure~\ref{fig:enter-label}). Numbered equations can also be cited (see Eq.~\eqref{eq:loiHooke}). As an example, this is Hooke's law:
 
 % ---------------------- Equation example -----------------------
 \begin{equation}
@@ -124,7 +116,7 @@ are the \emph{elastic constants}.
 \end{table}
 
 
-\section*{Open science statements}
+\section*{Open science declarations}
 
 \textbf{Acknowledgements}. Specify contributions that require acknowledgment but that do not warrant authorship. This may include acknowledgments of technical assistance, materials or financial support. When persons are mentioned in the acknowledgments, the corresponding author should request their permission to appear in the text.
 
@@ -156,7 +148,7 @@ are the \emph{elastic constants}.
 & \scriptsize{The Author(s) 2026.}
 &
 & \multirow{2}{*}{\parbox{0.43\textwidth}{\vspace{1mm}\scriptsize{This work is licensed under a \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution License 4.0} which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.}}}
-& \vspace{1mm}\includegraphics[height=1.5em]{cc.png}\hspace{0.15em}\includegraphics[height=1.5em]{by.png}
+& \vspace{1mm}\includegraphics[height=1.5em]{assets/cc.png}\hspace{0.15em}\includegraphics[height=1.5em]{assets/by.png}
 \end{tabular}
 
 \end{document}

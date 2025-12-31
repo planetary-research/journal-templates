@@ -23,7 +23,7 @@ jobs:
           tar -czf "$ARCHIVE" \
             README.md AGENTS.md \
             planetary.cls submission-BIBLATEX.tex SuppInfo.tex references.bib \
-            by.png cc.png planet.png journal_logo.pdf
+            assets/by.png assets/cc.png figures/planet.png assets/journal_logo.pdf
           echo "archive=$ARCHIVE" >> "$GITHUB_OUTPUT"
 
       - name: Upload release asset
