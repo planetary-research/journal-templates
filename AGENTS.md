@@ -2,16 +2,16 @@
 
 ## Project Structure & Modules
 - `planetary.cls`: main LaTeX class (submission/final). Edit cautiously and keep version/date header current.
-- `submission-BIBLATEX.tex`: canonical manuscript template using `biblatex` + `biber`.
-- `SuppInfo.tex`: supplementary-material template aligned with the main class.
+- `manuscript.tex`: canonical manuscript template using `biblatex` + `biber`.
+- `supplementary-materials.tex`: supplementary-material template aligned with the main class.
 - `references.bib`: sample bibliography; duplicate/extend instead of replacing field names.
 - Assets: `planet.png`, `cc.png`, `by.png`, `journal_logo.pdf` used in title blocks and footers. Keep file names stable.
 - `readme.md`: high-level overview; update when class options or compile steps change.
 
 ## Build, Test, and Development Commands
-- `pdflatex submission-BIBLATEX.tex && biber submission-BIBLATEX && pdflatex submission-BIBLATEX.tex && pdflatex submission-BIBLATEX.tex`: full build of the main template; expect a clean run without missing refs.
-- `pdflatex SuppInfo.tex`: compile supplementary material.
-- Prefer `latexmk -pdf submission-BIBLATEX.tex` if available; ensure it calls `biber`.
+- `pdflatex manuscript.tex && biber manuscript && pdflatex manuscript.tex && pdflatex manuscript.tex`: full build of the main template; expect a clean run without missing refs.
+- `pdflatex supplementary-materials.tex`: compile supplementary material.
+- Prefer `latexmk -pdf manuscript.tex` if available; ensure it calls `biber`.
 - When editing `planetary.cls`, compile both templates to catch regressions in headers, spacing, and bibliography.
 
 ## Coding Style & Naming Conventions
@@ -28,5 +28,5 @@
 
 ## Commit & Pull Request Guidelines
 - Commits: use short, imperative subjects (`Adjust header spacing`, `Fix biber hook`). Group related class edits together; include brief body explaining user-facing impact (e.g., “restores margin in review mode”).
-- Pull requests: summarize scope, list affected templates/options, and attach regenerated PDFs for `submission-BIBLATEX` and `SuppInfo`. Note any breaking changes to option names or required packages.
+- Pull requests: summarize scope, list affected templates/options, and attach regenerated PDFs for `manuscript` and `supplementary-materials`. Note any breaking changes to option names or required packages.
 - Reference related issues/requests and describe manual checks performed (commands run, warnings resolved). Keep diffs minimal—avoid reflowing unrelated LaTeX.
