@@ -24,6 +24,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{geometry}
 \geometry{margin=2.5cm}
+
 \PassOptionsToPackage{dvipsnames,table}{xcolor}
 
 \RequirePackage{amsmath}
@@ -51,6 +52,11 @@
   citecolor=MidnightBlue,
   urlcolor=MidnightBlue
 }
+
+
+\DeclareRobustCommand{\textsc}[1]{#1}
+
+
 
 \renewcommand{\familydefault}{\sfdefault}
 
