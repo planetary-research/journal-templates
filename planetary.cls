@@ -24,6 +24,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{geometry}
 \geometry{margin=2.5cm}
+\PassOptionsToPackage{dvipsnames,table}{xcolor}
 
 \RequirePackage{amsmath}
 \RequirePackage{lineno}
@@ -36,7 +37,6 @@
 \RequirePackage[style=authoryear,maxbibnames=99,backend=biber]{biblatex} 
 \RequirePackage{tabularx}
 \RequirePackage{booktabs}
-\RequirePackage[dvipsnames,table]{xcolor}
 \RequirePackage{url}
 \RequirePackage{hyperref}
 \RequirePackage{verbatim}
