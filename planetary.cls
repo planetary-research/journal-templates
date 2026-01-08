@@ -12,7 +12,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
-% 11pt en final, 12pt en review
+% 11pt for final, 12pt for review
 \ifprfinal
   \LoadClass[11pt,a4paper]{article}
 \else
@@ -23,7 +23,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{geometry}
-\geometry{margin=2.5cm} % base (review)
+\geometry{margin=2.5cm}
 
 \RequirePackage{amsmath}
 \RequirePackage{lineno}
@@ -33,16 +33,17 @@
 \RequirePackage{orcidlink}
 \RequirePackage{setspace}
 \RequirePackage{lipsum}
-%\RequirePackage{apacite} % AJOUT
-\RequirePackage[style=authoryear,maxbibnames=99,backend=biber]{biblatex} % biblatex / XXX style with full author list in bibliography
+\RequirePackage[style=authoryear,maxbibnames=99,backend=biber]{biblatex} 
 \RequirePackage{tabularx}
 \RequirePackage{booktabs}
 \RequirePackage[dvipsnames,table]{xcolor}
-\RequirePackage{url} % AJOUT
+\RequirePackage{url}
 \RequirePackage{hyperref}
 \RequirePackage{verbatim}
 \RequirePackage{multirow}
 \RequirePackage{textcomp}
+
+
 
 \hypersetup{
   colorlinks=true,
@@ -53,7 +54,9 @@
 
 \renewcommand{\familydefault}{\sfdefault}
 
-% ------------- En-têtes/pieds -------------
+
+
+% ------------- Headers/Footers -------------
 \setlength{\headheight}{48pt}
 
 \makeatletter
@@ -75,21 +78,41 @@
 \newcommand{\mstype}[1]{\small\vspace{1em}\noindent\textbf{Manuscript type: } #1}
 
 
+\newcommand{\specialissue}[1]
+{\small\vspace{1em}\noindent\textbf{Special issue: } #1}
+
+
+\newcommand{\subdate}[1]{\small\noindent \textbf{Submission date:} #1}
+\newcommand{\revdate}[1]{\small\noindent \textbf{Revision date:} #1}
+\newcommand{\accdate}[1]{\small\noindent \textbf{Accepted date:} #1}
+
+\newcommand{\license}
+{\vfill
+\noindent
+\begin{tabular}{p{0.01\textwidth} p{0.32\textwidth} p{0.01\textwidth} p{0.43\textwidth} p{0.1\textwidth}}
+\cline{1-5}
+\scriptsize{\textcopyright}
+& \scriptsize{The Author(s) 2026.}
+&
+& \multirow{2}{*}{\parbox{0.43\textwidth}{\vspace{1mm}\scriptsize{This work is licensed under a \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution License 4.0} which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.}}}
+& \vspace{1mm}\includegraphics[height=1.5em]{assets/cc.png}\hspace{0.15em}\includegraphics[height=1.5em]{assets/by.png}
+\end{tabular}}
+
 % ------------- Review vs Final ------------
-% (1) Numéros de lignes : uniquement en review
+% (1) Line numbering : only for review
 \ifprfinal
   % rien
 \else
   \AtBeginDocument{\linenumbers}
 \fi
 
-% (2) Réglages en FINAL
+% (2) Final tuning
 \ifprfinal
-  % Marges : gauche 3.8 cm, le reste inchangé (2.5 cm)
+  % Margins : 3.8 cm on the left, 2.5 cm othberwise
   \geometry{left=3.8cm}
 
   \makeatletter
-  % ---------- Titre/auteurs flushright SANS passer par authblk's \maketitle ----------
+  % ---------- Title/Authors flushright  ----------
   \renewcommand\maketitle{%
     \begingroup
       \let\footnote\thanks % garder les \thanks
@@ -106,15 +129,14 @@
     \endgroup
   }
 
-  % ---------- Floats à droite, même si \centering est utilisé ----------
-  % 1) Contenu des boîtes de float en raggedleft
-  \g@addto@macro\@floatboxreset{\raggedleft\let\centering\raggedleft}
-  % 2) Légendes alignées à droite
+  % ---------- Floats on the right ---------------
   \long\def\@makecaption#1#2{%
     \vskip\abovecaptionskip
-    \begin{flushright}\small \textbf{#1.} #2\par\end{flushright}%
+
+    \small \textbf{#1.} #2\par
+
     \vskip\belowcaptionskip
   }
   \makeatother
 \fi
-% ------------------ Fin -------------------
+% ------------------ End -------------------

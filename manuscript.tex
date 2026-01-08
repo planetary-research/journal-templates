@@ -2,7 +2,7 @@
 % Author Submission Template
 % Version: 1.2 – 27 Nov 2025
 % options: review (for submissions), final (for preprints)
-\documentclass[review]{planetary}
+\documentclass[final]{planetary}
 
 % -------------------- Title block --------------------
 % - Fill in title
@@ -19,7 +19,7 @@
 \addbibresource{references.bib} % replace by the name of your .bib file
 
 % -------------------- Date --------------------
-\date{\small Submission date: \today}
+\date{}
 
 % -------------------- Document --------------------
 \begin{document}
@@ -27,6 +27,23 @@
 % --------------------------------------------------
 \maketitle
 \thispagestyle{firstpage}
+
+
+% ------------------ Revision Date ------------------
+% Please provide the first submission date with \subdate and revision dates  \revdate and \accdate through revision procedure. Use \today if necessary.
+
+
+\subdate{1st January 2026}
+
+\revdate{\today}
+
+
+
+% -------------------- Special issue -------------
+% In case of special issue, please provide the issue's title with \specialissue{} command below. 
+
+%\specialissue{}
+
 
 % -------------------- Manuscript type -------------
 % The manuscript type must be one of:
@@ -36,7 +53,9 @@
 \mstype{Article}
 
 % -------------------- Word count ----------------
-\noindent \textbf{Word count:}
+\noindent \textbf{Word count:} Abstract: $\le$ 250
+
+
 \begin{itemize}
   \item (for letters only) Abstract + main text + captions: $\le$ 4500
   \item (for letters only) Methods: $\le$ 3000
@@ -51,16 +70,9 @@
 All submissions to Planetary Research must use the official journal template. By using this template, the authors ensure that all metadata required by the journal are provided, that all elements of the manuscript are present, and that the manuscript is formatted according to the journal's standards. The use of the journal template also ensures that the manuscript can be processed as part of the journal's post-acceptance production pipeline. Manuscript submissions that do not follow the journal's submission guidelines will be declined to be reviewed. The abstract must contain 250 words or less, without line breaks. It should provide a clear understanding of the work without requiring the reader to consult the full article. The abstract must be self-contained: it should not include references, and any abbreviations or acronyms must be introduced. The abstract should provide the context or background for the study and should state the study's purpose, basic procedures, main findings, and principal conclusions.
 \end{abstract}
 
-\vfill
-\noindent
-\begin{tabular}{p{0.01\textwidth} p{0.32\textwidth} p{0.01\textwidth} p{0.43\textwidth} p{0.1\textwidth}}
-\cline{1-5}
-\scriptsize{\textcopyright}
-& \scriptsize{The Author(s) 2026.}
-&
-& \multirow{2}{*}{\parbox{0.43\textwidth}{\vspace{1mm}\scriptsize{This work is licensed under a \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution License 4.0} which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.}}}
-& \vspace{1mm}\includegraphics[height=1.5em]{assets/cc.png}\hspace{0.15em}\includegraphics[height=1.5em]{assets/by.png}
-\end{tabular}
+
+% In case you want to post it in an open repository, you may wans to add license footnote with \license command below
+\license{}
 
 \newpage
 
@@ -147,20 +159,15 @@ Methods are an optional section that is used only for the letter format. The met
 \section{Appendix Title}
 Appendices are optional sections. Each table or figure in appendix should be labeled starting with the corresponding appendix letter (e.g., Table A1).
 
+
+
+
+
 % -------------------- Bibliography --------------------
 \printbibliography
 
+
 % -------------------- License & copyright --------------------
-\vfill
-
-\noindent
-\begin{tabular}{p{0.01\textwidth} p{0.32\textwidth} p{0.01\textwidth} p{0.43\textwidth} p{0.1\textwidth}}
-\cline{1-5}
-\scriptsize{\textcopyright}
-& \scriptsize{The Author(s) 2026.}
-&
-& \multirow{2}{*}{\parbox{0.43\textwidth}{\vspace{1mm}\scriptsize{This work is licensed under a \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution License 4.0} which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.}}}
-& \vspace{1mm}\includegraphics[height=1.5em]{assets/cc.png}\hspace{0.15em}\includegraphics[height=1.5em]{assets/by.png}
-\end{tabular}
-
+% In case you want to post it in an open repository, you may wans to add license footnote with \license command below
+\license{}
 \end{document}
