@@ -1,12 +1,13 @@
-% ---------------------------------------------------------------------------
+% ---------------------------------------------------------
 % Planetary Research – Author Submission / Final Class
-% Version 1.2 – 27 November 2025
-% ---------------------------------------------------------------------------
+% Last modified: Jan. 9, 2026
+% ---------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{planetary}[2025/09/15 v1.2 Planetary Research review/final class]
+\ProvidesClass{planetary}[2026/01/09 Planetary Research review/final class]
 
-% ---------------- Options ----------------
+
+% ------ Options ------------------------------------------
 \newif\ifprfinal
 \DeclareOption{final}{\prfinaltrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
@@ -18,6 +19,7 @@
 \else
   \LoadClass[12pt,a4paper]{article}
 \fi
+
 
 % --------------- Packages ----------------
 \RequirePackage[utf8]{inputenc}
@@ -35,7 +37,7 @@
 \RequirePackage{orcidlink}
 \RequirePackage{setspace}
 \RequirePackage{lipsum}
-\RequirePackage[style=authoryear,maxbibnames=99,backend=biber]{biblatex} 
+\RequirePackage[style=authoryear,maxbibnames=99,backend=biber]{biblatex}
 \RequirePackage{tabularx}
 \RequirePackage{booktabs}
 \RequirePackage{url}
@@ -44,8 +46,6 @@
 \RequirePackage{multirow}
 \RequirePackage{textcomp}
 
-
-
 \hypersetup{
   colorlinks=true,
   linkcolor=MidnightBlue,
@@ -53,16 +53,12 @@
   urlcolor=MidnightBlue
 }
 
-
 \DeclareRobustCommand{\textsc}[1]{#1}
-
-
 
 \renewcommand{\familydefault}{\sfdefault}
 
 
-
-% ------------- Headers/Footers -------------
+% ------ Headers/Footers ----------------------------------
 \setlength{\headheight}{48pt}
 
 \makeatletter
@@ -78,19 +74,18 @@
 \renewcommand\Affilfont{\normalfont\footnotesize}
 \pagestyle{plain}
 
-% ---------------- Helpers -----------------
+
+% ------ Helpers ------------------------------------------
 \newcommand{\summary}[1]{\small\vspace{1em}\noindent\textbf{Summary: } #1}
 
 \newcommand{\mstype}[1]{\small\vspace{1em}\noindent\textbf{Manuscript type: } #1}
 
-
 \newcommand{\specialissue}[1]
 {\small\vspace{1em}\noindent\textbf{Special issue: } #1}
 
-
-\newcommand{\subdate}[1]{\small\noindent \textbf{Submission date:} #1}
-\newcommand{\revdate}[1]{\small\noindent \textbf{Revision date:} #1}
-\newcommand{\accdate}[1]{\small\noindent \textbf{Accepted date:} #1}
+\newcommand{\submissiondate}[1]{\small\noindent \textbf{Submission date:} #1}
+\newcommand{\revisiondate}[1]{\small\noindent \textbf{Revision date:} #1}
+\newcommand{\accepteddate}[1]{\small\noindent \textbf{Accepted date:} #1}
 
 \newcommand{\license}
 {\vfill
@@ -104,38 +99,39 @@
 & \vspace{1mm}\includegraphics[height=1.5em]{assets/cc.png}\hspace{0.15em}\includegraphics[height=1.5em]{assets/by.png}
 \end{tabular}}
 
-% ------------- Review vs Final ------------
-% (1) Line numbering : only for review
+
+% ------ Review vs Final ----------------------------------
+% Line numbering : only for review
 \ifprfinal
   % rien
 \else
   \AtBeginDocument{\linenumbers}
 \fi
 
-% (2) Final tuning
+% Final tuning
 \ifprfinal
   % Margins : 3.8 cm on the left, 2.5 cm othberwise
   \geometry{left=3.8cm}
 
   \makeatletter
-  % ---------- Title/Authors flushright  ----------
+  % ------ Title/Authors flushleft  --------------------
   \renewcommand\maketitle{%
     \begingroup
       \let\footnote\thanks % garder les \thanks
       \thispagestyle{firstpage}%
       \noindent
-      \begin{flushright}
+      \begin{flushleft}
         {\LARGE\bfseries \@title \par}%
         \vskip 1em
         {\large \@author \par}%
         \vskip .5em
         {\normalsize \@date \par}%
-      \end{flushright}
-      \par\vskip 1.5em
+      \end{flushleft}
+      \par\vskip 2em
     \endgroup
   }
 
-  % ---------- Floats on the right ---------------
+  % ------ Floats on the right --------------------------
   \long\def\@makecaption#1#2{%
     \vskip\abovecaptionskip
 
@@ -145,4 +141,5 @@
   }
   \makeatother
 \fi
-% ------------------ End -------------------
+
+% ------ End ----------------------------------------------
