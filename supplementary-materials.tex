@@ -1,15 +1,16 @@
 % Planetary Research - A diamond open access journal
 % Supplementary materials template
-% Version: 1.5 – 27 Nov 2025
+% Last modified: Jan. 9, 2026
 \documentclass{planetary}
 
 \renewcommand{\thesection}{S\Roman{section}}
 
 
-% -------------------- Title block --------------------
+% ------ Title block --------------------------------------
 % - Fill in title
-\title{<Article Title>}
-% -------------------- Author block --------------------
+\title{Article Title}
+
+% ------ Author block -------------------------------------
 % - Fill in authors, ORCIDs, and affiliations
 \author[1,*]{First Author\,\orcidlink{0000-0000-0000-0000}}
 \author[2]{Second Author\,\orcidlink{0000-0000-0000-0000}}
@@ -17,16 +18,12 @@
 \affil[2]{Affiliation of Second Author, City, Country, ROR ID}
 \affil[*]{\textit{Corresponding author:} First Author — \texttt{first.author@university.email}}
 
-
-% -------------------- BIB FILE --------------------
+% ------ BIB FILE -----------------------------------------
 \addbibresource{references.bib} % replace by the name of your .bib file
 
 
-% -------------------- Document --------------------
+% ------ Document -----------------------------------------
 \begin{document}
-
-% --------------------------------------------------
-
 
 \maketitle
 \begin{center}
@@ -35,35 +32,28 @@
 
 \thispagestyle{firstpage}
 
-
-
 \tableofcontents
 
-
+% ------ License ------------------------------------------
+% If you intend to distribute this manuscript, consider
+% adding a CC-BY license by uncommenting the following
+% line
+\license{}
 
 \newpage
-% -------------------- Main Sections --------------------
+
+
+% ------ Main Section -------------------------------------
 \section{Introduction}
-
-
 
 \subsection{Subsection}
 
 
 
-
-
-
-
-
-\noindent
-\begin{tabular}{p{0.01\textwidth} p{0.32\textwidth} p{0.01\textwidth} p{0.43\textwidth} p{0.1\textwidth}}
-\cline{1-5}
-\scriptsize{\textcopyright}
-& \scriptsize{The Author(s) 2026.}
-&
-& \multirow{2}{*}{\parbox{0.43\textwidth}{\vspace{1mm}\scriptsize{This work is licensed under a \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution License 4.0} which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.}}}
-& \vspace{1mm}\includegraphics[height=1.5em]{assets/cc.png}\hspace{0.15em}\includegraphics[height=1.5em]{assets/by.png}
-\end{tabular}
+% ------ License ------------------------------------------
+% If you intend to distribute this manuscript, consider
+% adding a CC-BY license by uncommenting the following
+% line
+\license{}
 
 \end{document}

@@ -1,13 +1,14 @@
 % Planetary Research - A diamond open access journal
-% Author Submission Template
-% Version: 1.2 – 27 Nov 2025
+% Author Submission Template for Latex
+% Last modified: Jan. 9, 2026
 % options: review (for submissions), final (for preprints)
-\documentclass[final]{planetary}
+\documentclass[review]{planetary}
 
-% -------------------- Title block --------------------
-% - Fill in title
-\title{<Article Title>}
-% -------------------- Author block --------------------
+% ------ Title block --------------------------------------
+% Fill in title
+\title{Article Title}
+
+% ------ Author block -------------------------------------
 % - Fill in authors, ORCIDs, and affiliations
 \author[1,*]{First Author\,\orcidlink{0000-0000-0000-0000}}
 \author[2]{Second Author\,\orcidlink{0000-0000-0000-0000}}
@@ -15,68 +16,61 @@
 \affil[2]{Affiliation of Second Author, City, Country, ROR ID}
 \affil[*]{\textit{Corresponding author:} First Author — \texttt{first.author@university.email}}
 
-% -------------------- BIB FILE --------------------
+% ------ BIB FILE -----------------------------------------
 \addbibresource{references.bib} % replace by the name of your .bib file
 
-% -------------------- Date --------------------
-\date{}
+% ------ Date ---------------------------------------------
+\date{} % leave empty
 
-% -------------------- Document --------------------
+% ------ Document -----------------------------------------
 \begin{document}
-
-% --------------------------------------------------
 \maketitle
 \thispagestyle{firstpage}
 
+% ------ Submission and Revision Dates --------------------
+% Please provide the submission date, all revision dates,
+% and the acceptance date. Use \today when appropriate.
+\submissiondate{1st January 2026}
+% \revisiondate{\today}
+% \accepteddate{\today}
 
-% ------------------ Revision Date ------------------
-% Please provide the first submission date with \subdate and revision dates  \revdate and \accdate through revision procedure. Use \today if necessary.
+% ------ Special Issues -----------------------------------
+% If the manuscript is submitted as part of a special
+% issue, uncomment the following command and provide the
+% special issue name.
+% \specialissue{Special issue name}
 
-
-\subdate{1st January 2026}
-
-\revdate{\today}
-
-
-
-% -------------------- Special issue -------------
-% In case of special issue, please provide the issue's title with \specialissue{} command below. 
-
-%\specialissue{}
-
-
-% -------------------- Manuscript type -------------
+% ------ Manuscript type ----------------------------------
 % The manuscript type must be one of:
 %     Article, Review, Letter, Numerical code, Dataset,
 %     Missions and instrumentation, Introduction,
 %     Commentary, or Editorial.
 \mstype{Article}
 
-% -------------------- Word count ----------------
-\noindent \textbf{Word count:} Abstract: $\le$ 250
+% ------ Word count ---------------------------------------
+% For letters, uncomment the first two lines.
+% \noindent \textbf{Word count (Abstract + main text + captions):} ($\le$ 4500)  % letters only
+% \noindent \textbf{Word count (Methods):}: ($\le$ 3000)  % letters only
+\noindent \textbf{Word count (Abstract):} ($\le$ 250)
 
+% ------ Summary ------------------------------------------
+\summary{A short summary that is 350 or fewer characters in length. The summary will appear before the manuscript abstract and will appear in the issue's table of contents. Summaries should in general be written in full sentences, though other formats may be considered when they respect the character limit.}
 
-\begin{itemize}
-  \item (for letters only) Abstract + main text + captions: $\le$ 4500
-  \item (for letters only) Methods: $\le$ 3000
-  \item Abstract: $\le$ 250
-\end{itemize}
-
-% -------------------- Summary --------------------
-\summary{Provide a short summary that is 350 or fewer characters in length. This summary will appear before the manuscript abstract and will also appear in the issue's table of contents. Summaries should in general be written in full sentences, though other formats may be considered when they respect the character limit.}
-
-% -------------------- Abstract --------------------
+% ------ Abstract -----------------------------------------
 \begin{abstract}
 All submissions to Planetary Research must use the official journal template. By using this template, the authors ensure that all metadata required by the journal are provided, that all elements of the manuscript are present, and that the manuscript is formatted according to the journal's standards. The use of the journal template also ensures that the manuscript can be processed as part of the journal's post-acceptance production pipeline. Manuscript submissions that do not follow the journal's submission guidelines will be declined to be reviewed. The abstract must contain 250 words or less, without line breaks. It should provide a clear understanding of the work without requiring the reader to consult the full article. The abstract must be self-contained: it should not include references, and any abbreviations or acronyms must be introduced. The abstract should provide the context or background for the study and should state the study's purpose, basic procedures, main findings, and principal conclusions.
 \end{abstract}
 
-
-% In case you want to post it in an open repository, you may wans to add license footnote with \license command below
-\license{}
+% ------ License ------------------------------------------
+% If you intend to distribute this manuscript, consider
+% adding a CC-BY license by uncommenting the following
+% line
+% \license{}
 
 \newpage
 
-% -------------------- Main Sections --------------------
+
+% ------ Main Section -------------------------------------
 \section{Introduction}
 
 All elements required for compilation must be supplied and compilation should be error-free.
@@ -87,7 +81,8 @@ Please refrain from using any self-made definitions ("newcommand") since these w
 
 Sections and subsections should be numbered, with a maximum of 3 levels (1.; 1.1.; 1.1.1.).
 
-% --------------------- Figure example ---------------------------
+
+% ------ Figure example -----------------------------------
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.3\textwidth]{figures/planet.png}
@@ -99,7 +94,8 @@ Sections and subsections should be numbered, with a maximum of 3 levels (1.; 1.1
 
 Authors should make the best possible use of cross-references when citing tables, figures and references. References should be cited in sentences, such as~\textcite{becker2015phd}, \textcite{Rudolph2020}, \textcite{bagnasco2017nirspec}, and \textcite{Breuer2015}. References can also be cited between brackets~\parencites{dressler2006nasa,Neukumetal2001a,Wieczorek2022-preprint,SJOGRENdataset}. All figures and tables should be cited in the text (see Table~\ref{tab:example_dummy} and Figure~\ref{fig:enter-label}). Numbered equations can also be cited (see Eq.~\eqref{eq:loiHooke}). As an example, this is Hooke's law:
 
-% ---------------------- Equation example -----------------------
+
+% ------ Equation example ---------------------------------
 \begin{equation}
      \sigma^{ij}({\bf x},t)
      \;=\;
@@ -116,7 +112,8 @@ is called the \emph{pre-stress}, and the coefficients
 $ c_0^{ijkl}({\bf x}) $
 are the \emph{elastic constants}.
 
-%---------------------Table example ---------------------
+
+% ------ Table example ------------------------------------
 \begin{table}[!ht]
     \centering
     \renewcommand{\arraystretch}{1.0}
@@ -151,7 +148,7 @@ are the \emph{elastic constants}.
 \textbf{Competing interests.} All manuscripts must declare any real or perceived conflicts of interest. Competing interests may include both financial and non-financial interests such as past or present employment, consulting activity, financing, intellectual property, ownership of financial assets, or advisory roles. In the case where there are no competing interests, one can use the statement: The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 
 
-% -------------------- Appendix and methods --------------------
+% ------ Appendix and methods -----------------------------
 \section*{Methods}
 Methods are an optional section that is used only for the letter format. The methods section must be less than 3000 words in length and contain no tables or figures.
 
@@ -160,14 +157,15 @@ Methods are an optional section that is used only for the letter format. The met
 Appendices are optional sections. Each table or figure in appendix should be labeled starting with the corresponding appendix letter (e.g., Table A1).
 
 
-
-
-
-% -------------------- Bibliography --------------------
+% ------ Bibliography -------------------------------------
 \printbibliography
 
 
-% -------------------- License & copyright --------------------
-% In case you want to post it in an open repository, you may wans to add license footnote with \license command below
-\license{}
+% ------ License ------------------------------------------
+% If you intend to distribute this manuscript, consider
+% adding a CC-BY license by uncommenting the following
+% line
+% \license{}
+
+
 \end{document}
