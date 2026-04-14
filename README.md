@@ -53,6 +53,7 @@ pdflatex submission-BIBLATEX.tex && biber submission-BIBLATEX && pdflatex submis
 ## Tips
 - Keep logo filenames unchanged; they are referenced by the class (`journal_logo`).
 - Avoid defining ad-hoc macros in manuscripts; prefer editing `planetary.cls` and making a pull request if a feature is needed.
+- Use `\upmu` for an upright micro sign in units, for example `3~\upmu m` instead of `$\mu$m`.
 - Treat warnings (missing references, overfull boxes) as failures to fix before submission.
 
 ## License and support

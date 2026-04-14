@@ -1,10 +1,10 @@
 % ---------------------------------------------------------
 % Planetary Research – Author Submission / Final Class
-% Last modified: Jan. 9, 2026
+% Last modified: Apr. 14, 2026
 % ---------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{planetary}[2026/01/09 Planetary Research review/final class]
+\ProvidesClass{planetary}[2026/04/14 Planetary Research review/final class]
 
 
 % ------ Options ------------------------------------------
@@ -79,6 +79,8 @@
 \newcommand{\summary}[1]{\small\vspace{1em}\noindent\textbf{Summary: } #1}
 
 \newcommand{\mstype}[1]{\small\vspace{1em}\noindent\textbf{Manuscript type: } #1}
+
+\DeclareRobustCommand{\upmu}{\ifmmode\text{\textmu}\else\textmu\fi}
 
 \newcommand{\specialissue}[1]
 {\small\vspace{1em}\noindent\textbf{Special issue: } #1}
