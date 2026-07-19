@@ -1,59 +1,59 @@
 # Planetary Research — Journal Templates
 
-Official LaTeX class and other templates for submissions to *Planetary Research*. The default mode for the LaTeX class is **review** (line-numbered, 12pt); use **final** for a preprint-ready layout (11pt, right-aligned title/authors, adjusted margins).
-
-## Preview
-Screenshot of the compiled front page of the LaTeX submission file `submission-BIBLATEX.tex`:
-
-![Front page preview](assets/frontpage.png)
-
-Commands to compile from the command line (after installing LaTeX/ImageMagick):
-```
-pdflatex submission-BIBLATEX.tex && biber submission-BIBLATEX && pdflatex submission-BIBLATEX.tex && magick convert -density 180 submission-BIBLATEX.pdf[0] -quality 92 assets/frontpage.png
-```
+Official LaTeX and docx/odt templates for submissions to *Planetary Research*.
 
 ## Repository layout
+
 - `planetary.cls` — journal class.
 - `manuscript.tex` — main manuscript template that uses `biblatex`/`biber`.
 - `supplmentary-materials.tex` — supplementary material template matching the class defaults.
 - `references.bib` — sample bibliography.
-- `PR_manuscript.docx` — docx/odt template.
-- `PR_supplementary_materials.docx` — docx/odt template for supplementary materials.
 - Assets: `journal_logo.pdf`, `frontpage.png`, `cc.png`, `by.png`.
 - Figures: `planet.png`
+- `PR_Article.docx` — docx/odt template for all manuscript types except letters.
+- `PR_Letter.docx` — docx/odt template for letters.
+- `PR_supplementary_materials.docx` — docx/odt template for supplementary materials.
 
-## Quick start
-1) Place `planetary.cls` in the same folder as your manuscript.  
-2) Minimal preamble for LaTeX manuscript:
-```latex
-\documentclass{planetary} % add [final] for preprint
-\addbibresource{references.bib}
-\title{A concise title}
-\author[1,*]{First Author\,\orcidlink{0000-0000-0000-0000}}
-\affil[1]{Affiliation, City, Country}
-\date{\today}
-```
-3) In the document body:
-```latex
-\mstype{Article}
-```
+## docx/odt instructions
 
-## Build commands
+Download and edit the file `PR_Article.docx` or `PR_Letter.docx`. Before submitting the manuscript, be sure to convert the file to PDF.
+
+## LaTeX instructions
+
+Place the files `planetary.cls` and `manuscript.tex` in the same folder and then edit the file `manuscript.tex`.
+
+The default options for the LaTeX class are **review** (line-numbered, 12pt) and **article** (research article). Use **final** for a preprint-ready layout (11pt, right-aligned title/authors, adjusted margins). For other manuscript types, see below.
+
+Screenshot of the compiled front page of the LaTeX submission file `submission-BIBLATEX.tex`:
+
+![Front page preview](assets/frontpage.png)
+
+### Build commands
 - Full cycle (recommended):  
   `pdflatex manuscript.tex && biber manuscript && pdflatex manuscript.tex && pdflatex manuscript.tex`
 - Supplementary material: `pdflatex supplementary-materials.tex`
 - If available, `latexmk -pdf manuscript.tex` is fine; ensure it calls `biber`.
 
-## Class highlights
-- **review** mode: line numbers enabled; 2.5 cm margins.
-- **final** mode: left margin widened to 3.8 cm; title/authors flushed right; floats and captions right-aligned.
-- Preloaded packages: `authblk`, `orcidlink`, `biblatex` (authoryear, `biber` backend), `lineno`, `geometry`, `fancyhdr`, `xcolor`, `tabularx`, `booktabs`, `graphicx`, `hyperref`.
-- Provided helpers: `\keywords{...}`, `\mstype{...}`.
+### Class options - preview mode
+- **review**: line numbers enabled; 2.5 cm margins.
+- **final**: left margin widened to 3.8 cm; title/authors flushed right; floats and captions right-aligned.
 
-## Tips
+### Class options - manuscript type
+- **article**: Research article
+- **reviewarticle**: Review article
+- **letter**: Letter
+- **numericalcode**: Numerical code
+- **dataset**: Datasets
+- **missions**: Missions and instrumentation
+- **introduction**: Introduction to a special issue
+- **editorial**: Editorial
+- **commentary**: Commentary
+
+### Tips
 - Keep logo filenames unchanged; they are referenced by the class (`journal_logo`).
-- Avoid defining ad-hoc macros in manuscripts; prefer editing `planetary.cls` and making a pull request if a feature is needed.
-- Treat warnings (missing references, overfull boxes) as failures to fix before submission.
+- Avoid defining ad-hoc macros in manuscripts. Make a pull request to modify the class if a feature is needed.
+- Use `\upmu` for an upright micro sign in units, for example `3~\upmu m` instead of `$\mu$m`.
+- Treat warnings as failures to fix before submission.
 
-## License and support
+# License and support
 Released under the MIT License unless stated otherwise. For help, contact `tech@planetary-research.org`.

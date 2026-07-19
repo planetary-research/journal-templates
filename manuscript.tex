@@ -1,101 +1,155 @@
 % Planetary Research - A diamond open access journal
+%
 % Author Submission Template for Latex
-% Last modified: Jan. 9, 2026
-% options: review (for submissions), final (for preprints)
-\documentclass[review]{planetary}
+% Last modified: July 18, 2026
 
-% ------ Title block --------------------------------------
-% Fill in title
+% Please add a manuscript type and preview option to the
+% documentclass command.
+% 
+% Manuscript type:
+%     article
+%     reviewarticle
+%     letter
+%     numericalcode
+%     dataset
+%     missions
+%     introduction
+%     editorial
+%     commentary
+% Preview options:
+%     review (for submissions)
+%     final (for preprints)
+\documentclass[article,review]{planetary}
+
+% ------ Title block --------------------------------------------------
+% Add a title and short title
 \title{Article Title}
+\shorttitle{Short title used for headers}
 
-% ------ Author block -------------------------------------
-% - Fill in authors, ORCIDs, and affiliations
-\author[1,*]{First Author\,\orcidlink{0000-0000-0000-0000}}
-\author[2]{Second Author\,\orcidlink{0000-0000-0000-0000}}
+% ------ Author block -------------------------------------------------
+% Fill in all authors, their ORCID iDs, and affiliations.
+% Each author must have an ORCID iD.
+\author[1]{FirstName LastName \orcid{0000-0000-0000-0000}}
+\author[2]{FirstName LastName \orcid{0000-0000-0000-0000}}
+
 \affil[1]{Affiliation of First Author, City, Country, ROR ID}
 \affil[2]{Affiliation of Second Author, City, Country, ROR ID}
-\affil[*]{\textit{Corresponding author:} First Author — \texttt{first.author@university.email}}
 
-% ------ BIB FILE -----------------------------------------
+\setcorrespauth{FirstName LastName} % Name of the corresponding author
+\setcorrespmail{first.author@university.email} % email of the corresponding author
+
+% ------ BIB file -----------------------------------------------------
 \addbibresource{references.bib} % replace by the name of your .bib file
 
-% ------ Date ---------------------------------------------
+% ------ Date ---------------------------------------------------------
 \date{} % leave empty
 
-% ------ Document -----------------------------------------
+% ------ Document -----------------------------------------------------
 \begin{document}
 \maketitle
 \thispagestyle{firstpage}
 
-% ------ Submission and Revision Dates --------------------
+\correspondingauthor % print corresponging author
+
+% ------ Submission and Revision Dates --------------------------------
 % Please provide the submission date, all revision dates,
 % and the acceptance date. Use \today when appropriate.
 \submissiondate{1st January 2026}
 % \revisiondate{\today}
 % \accepteddate{\today}
 
-% ------ Special Issues -----------------------------------
-% If the manuscript is submitted as part of a special
-% issue, uncomment the following command and provide the
-% special issue name.
+% ------ Special Issues -----------------------------------------------
+% If the manuscript is submitted as part of a special issue, uncomment
+% the following command and provide the special issue name.
 % \specialissue{Special issue name}
 
-% ------ Manuscript type ----------------------------------
-% The manuscript type must be one of:
-%     Article, Review, Letter, Numerical code, Dataset,
-%     Missions and instrumentation, Introduction,
-%     Commentary, or Editorial.
-\mstype{Article}
+\mstype{\articletype} % print manuscript type
 
-% ------ Word count ---------------------------------------
-% For letters, uncomment the first two lines.
-% \noindent \textbf{Word count (Abstract + main text + captions):} ($\le$ 4500)  % letters only
-% \noindent \textbf{Word count (Methods):}: ($\le$ 3000)  % letters only
-\noindent \textbf{Word count (Abstract):} ($\le$ 250)
+% ------ Word and character counts ------------------------------------
+% Provide the character count of the summary
+\summarycharactercount{($\le$ 350 characters)}
 
-% ------ Summary ------------------------------------------
+\IfStrEq{\articletype}{LETTER}{
+% For letters, provide the letter word count (abstract + main text
+% + captions) and methods word count.
+\letterwordcount{($\le$ 4500)}
+\methodswordcount{($\le$ 3000 words)
+}}{
+% For all other manuscript types, provide the abstract word count. 
+\abstractwordcount{($\le$ 250 words)}
+}
+
+\stitle{\insertshorttitle} % print short title
+
+% ------ Summary ------------------------------------------------------
 \summary{A short summary that is 350 or fewer characters in length. The summary will appear before the manuscript abstract and will appear in the issue's table of contents. Summaries should in general be written in full sentences, though other formats may be considered when they respect the character limit.}
 
 % ------ Abstract -----------------------------------------
 \begin{abstract}
-All submissions to Planetary Research must use the official journal template. By using this template, the authors ensure that all metadata required by the journal are provided, that all elements of the manuscript are present, and that the manuscript is formatted according to the journal's standards. The use of the journal template also ensures that the manuscript can be processed as part of the journal's post-acceptance production pipeline. Manuscript submissions that do not follow the journal's submission guidelines will be declined to be reviewed. The abstract must contain 250 words or less, without line breaks. It should provide a clear understanding of the work without requiring the reader to consult the full article. The abstract must be self-contained: it should not include references, and any abbreviations or acronyms must be introduced. The abstract should provide the context or background for the study and should state the study's purpose, basic procedures, main findings, and principal conclusions.
+All submissions to Planetary Research must use the official journal template. By using this template, the authors ensure that all metadata required by the journal are provided, that all elements of the manuscript are present, and that the manuscript is formatted according to the journal's standards. The use of the journal template also ensures that the manuscript can be processed as part of the journal's post-acceptance production pipeline. Manuscript submissions that do not follow the journal's submission guidelines will be systematically rejected without review. The abstract must contain 250 words or less, without line breaks. It should provide a clear understanding of the work without requiring the reader to consult the entire article. The abstract must be self-contained: it should not include references, and any abbreviations or acronyms must be introduced. The abstract should provide the context or background for the study and state the basic procedures, main findings and conclusions.
 \end{abstract}
 
-% ------ License ------------------------------------------
-% If you intend to distribute this manuscript, consider
-% adding a CC-BY license by uncommenting the following
-% line
-% \license{}
+% ------ License ------------------------------------------------------
+% If you intend to distribute this manuscript, consider adding a
+% CC-BY license by uncommenting the following line
+\license{}
 
 \newpage
 
-
-% ------ Main Section -------------------------------------
+% ------ Main text ----------------------------------------------------
 \section{Introduction}
 
-All elements required for compilation must be supplied and compilation should be error-free.
+All elements required for compilation must be supplied and compilation should be error free. Please refrain from using any self-made definitions ("newcommand") since these will be removed during the processing of your text. If you use typing abbreviations, search and replace them before submitting your manuscript. Use upright symbols for units. For example, write micrometers as 3~\upmu m instead of $\mu$m.
 
-Please refrain from using any self-made definitions ("newcommand") since these will be removed during the processing of your text. If you use typing abbreviations, search and replace them before submitting your manuscript.
+\subsection{Subsections}
 
-\subsection{Subsection}
+Sections and subsections have a maximum of three levels and are numbered as 1, 1.1, and 1.1.1. Letters do not number sections and subsections.
 
-Sections and subsections should be numbered, with a maximum of 3 levels (1.; 1.1.; 1.1.1.).
-
-
-% ------ Figure example -----------------------------------
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=0.3\textwidth]{figures/planet.png}
-    \caption{All lettering (symbols, numbers) in figures must be consistent in style and size across all illustrations and large enough to ensure legibility. Each figure and table must be accompanied by a concise, explanatory caption. Captions must include any necessary credits if portions of the figure are not original. Each figure must correspond to a single, separate file: the use of commands such as subfigure or equivalent packages is not allowed; only one "includegraphics" command per figure is permitted. For further information, see the figures section in the author submission guidelines, \href{https://planetary-research.org/submission-guidelines}{https://planetary-research.org/submission-guidelines}.}
-    \label{fig:enter-label}
-\end{figure}
 
 \subsubsection{Sub-subsection}
 
-Authors should make the best possible use of cross-references when citing tables, figures and references. References should be cited in sentences, such as~\textcite{becker2015phd}, \textcite{Rudolph2020}, \textcite{bagnasco2017nirspec}, and \textcite{Breuer2015}. References can also be cited between brackets~\parencites{dressler2006nasa,Neukumetal2001a,Wieczorek2022-preprint,SJOGRENdataset}. All figures and tables should be cited in the text (see Table~\ref{tab:example_dummy} and Figure~\ref{fig:enter-label}). Numbered equations can also be cited (see Eq.~\eqref{eq:loiHooke}). As an example, this is Hooke's law:
+This is an example of a sub-subsection. Letters should avoid using sub-subsections.
 
+\section{Figures}
+All figures should be cited in the text (see Figure~\ref{fig:enter-label}). Following acceptance of an article, the journal will ask for original versions of each figure. The journal accepts the following file formats: jpg, png, tiff, pdf, and svg. Each figure should consist of a single file, and if the figure is composed of several components, it is the author's responsibility to combine these into a single file.
 
-% ------ Equation example ---------------------------------
+% ------ Figure example -----------------------------------------------
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/planet.png}
+    \caption{{\bf Figure short title.} All lettering (symbols, numbers) in figures must be consistent in style and size across all illustrations and large enough to ensure legibility. Each figure and table must be accompanied by a concise, explanatory caption. Captions must include any necessary credits if portions of the figure are not original. Each figure must correspond to a single, separate file: the use of commands such as subfigure or equivalent packages is not allowed; only one "includegraphics" command per figure is permitted. For further information, see the figures section in the author submission guidelines, \href{https://planetary-research.org/submission-guidelines}{https://planetary-research.org/submission-guidelines}.}
+    \label{fig:enter-label}
+\end{figure}
+
+Figures must be sized to fit in the PDF version of the manuscript. Images will appear with widths between 10 and 15 cm, and have a maximum permissible height of 22 cm. The minimum permissible dpi (dots per inch) is 150. In terms of pixels, these dimensions correspond to 590-890×1300. Each figure must contain a caption and should start with a short figure title in bold. If the figure was published previously, the original source must be acknowledged. Furthermore, written permission to reuse the figure must be provided to the journal from the copyright holder if the figure is not distributed under a license permitting reuse.
+
+\section{Tables}
+
+Each table must contain a caption and should start with a short title in bold. The maximum width of a table cannot exceed the width of the PDF page: The journal does not support landscape mode for large tables, and the font size used for tables in the manuscript cannot be modified.
+
+% ------ Table example ------------------------------------------------
+\begin{table}[!ht]
+    \mytablestyle
+    \caption{{\bf Table short title.} Example table with placeholder content. Please keep the preceding mytablestyle command.}
+    \footnotesize{
+        \begin{tabular}{l c}
+            \toprule
+            \textbf{Name} & \textbf{Variable} \\
+            \hline
+            Dummy parameter A before event & $\alpha_{\text{before}}$ \\
+            Dummy parameter B before event & $\beta_{\text{before}}$ \\
+            Sum of Gaussian differences in A & $\Sigma\text{DoG}(\Delta\alpha)$ \\
+            \textit{Normalized Dummy Index} & NDI \\
+            \hline
+        \end{tabular}}
+        \label{tab:example_dummy}
+\end{table}
+
+\section{Equations}
+
+Equations are numbered and can be cited in the text. As an example, Equation~\eqref{eq:loiHooke} is Hooke's law:
+
+% ------ Equation example ---------------------------------------------
 \begin{equation}
      \sigma^{ij}({\bf x},t)
      \;=\;
@@ -107,65 +161,71 @@ Authors should make the best possible use of cross-references when citing tables
      \label{eq:loiHooke}
 \end{equation}
 where the term
-$ \sigma_0^{ij}({\bf x},t) $
-is called the \emph{pre-stress}, and the coefficients
-$ c_0^{ijkl}({\bf x}) $
-are the \emph{elastic constants}.
+$\sigma_0^{ij}({\bf x},t)$ is called the \emph{pre-stress}, and the coefficients $c_0^{ijkl}({\bf x})$ are the \emph{elastic constants}.
 
+\section{References}
+The journal uses the American Psychological Association (APA) 7th edition style for references and citations. References can be cited textually in sentences, such as~\textcite{becker2015phd}, \textcite{Rudolph2020}, \textcite{bagnasco2017nirspec}, and \textcite{Breuer2015}. References can also be cited parenthetically~\parencites{dressler2006nasa,Neukumetal2001a,Wieczorek2022-preprint,SJOGRENdataset}. Each reference must contain a persistent identifier (such as a DOI) when one is available.
 
-% ------ Table example ------------------------------------
-\begin{table}[!ht]
-    \centering
-    \renewcommand{\arraystretch}{1.0}
-    \footnotesize{
-        \begin{tabular}{c c}
-            \toprule
-            \textbf{Name} & \textbf{Variable} \\
-            \hline
-            Dummy parameter A before event & $\alpha_{\text{before}}$ \\
-            Dummy parameter B before event & $\beta_{\text{before}}$ \\
-            Sum of Gaussian differences in A & $\Sigma\text{DoG}(\Delta\alpha)$ \\
-            \textit{Normalized Dummy Index} & NDI \\
-            \hline
-        \end{tabular}}
-        \caption{Example table with placeholder content. Replace labels and symbols as needed.}
-        \label{tab:example_dummy}
-\end{table}
-
+\section*{Acknowledgements}
+Specify contributions that require acknowledgment but that do not warrant authorship. This may include acknowledgments of technical assistance, materials, or financial support. When persons are mentioned in the acknowledgments, the corresponding author should request their permission to appear in the text.
 
 \section*{Open science declarations}
 
-\textbf{Acknowledgements}. Specify contributions that require acknowledgment but that do not warrant authorship. This may include acknowledgments of technical assistance, materials or financial support. When persons are mentioned in the acknowledgments, the corresponding author should request their permission to appear in the text.
+\noindent\textbf{Author contributions.} List here the details of each of the author's contributions to the work using the Contributor Role Taxonomy (CRediT, \href{https://credit.niso.org/}{https://credit.niso.org/}). These roles include: Conceptualization, Data curation, Formal analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing (original draft), and Writing (review \& editing). Only those roles that are appropriate should be specified. These roles are summarized in the journal's authorship policies: \href{https://planetary-research.org/authorship}{https://planetary-research.org/authorship}.
 
-\textbf{Author contributions.} List here the details of each of the author's contributions to the work using the Contributor Role Taxonomy (CRediT, \href{https://credit.niso.org/}{https://credit.niso.org/}). These roles include: Conceptualization, Data curation, Formal analysis, Funding acquisition, Investigation, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing (original draft), and Writing (review \& editing). Only those roles that are appropriate should be specified. These roles are summarized in the journal's authorship policies: \href{https://planetary-research.org/authorship}{https://planetary-research.org/authorship}.
+\noindent\textbf{Code availability.} Numerical codes must both be findable and accessible according to FAIR principles (\href{https://www.go-fair.org/fair-principles/}{https://www.go-fair.org/fair-principles/}). Findable means that the code can be located using a persistent identifier, such as a software heritage identifier SWHID, an astrophysics source code library identifier ASCL, or a DOI. The conditions under which the code and software used in a manuscript can be accessed must be described either on the landing page of the code or in the code archive. If the code is restricted and requires credentials to be accessed, the exact conditions under which the credentials can be obtained should be provided. For further information, see the journal's Open Science policies: \href{https://planetary-research.org/open-science}{https://planetary-research.org/open-science}.
 
-\textbf{Code availability.} Numerical codes must both be findable and accessible according to FAIR principles (\href{https://www.go-fair.org/fair-principles/}{https://www.go-fair.org/fair-principles/}). Findable means that the code can be located using a persistent identifier, such as a software heritage identifier SWHID, an astrophysics source code library identifier ASCL, or a DOI. The conditions under which the code and software used in a manuscript can be accessed must be described either on the landing page of the code or in the code archive. If the code is restricted and requires credentials to be accessed, the exact conditions under which the credentials can be obtained should be provided. For further information, see the journal's Open Science policies: \href{https://planetary-research.org/open-science}{https://planetary-research.org/open-science}.
+\noindent\textbf{Data availability.} Any data that were used or generated as part of the study and that are not found in the manuscript and supplement must be uploaded to a public data repository before the article is accepted for publication. The datasets and any accompanying metadata and documentation should be made available to the reviewers during the peer-review process. For further information, see the journal's Open Science policies: \href{https://planetary-research.org/open-science}{https://planetary-research.org/open-science}.
 
-\textbf{Data availability.} Any data that were used or generated as part of the study and that are not found in the manuscript and supplement must be uploaded to a public data repository before the article is accepted for publication. The datasets and any accompanying metadata and documentation need to be made available to the reviewers during the peer-review process. For further information, see the journal's Open Science policies: \href{https://planetary-research.org/open-science}{https://planetary-research.org/open-science}.
+\noindent\textbf{Funding.} All sources of funding for the work must be disclosed. For work funded by a research agency, the following information should be provided: The name of the funding agency, the name of the funding program, the title of the funded project, and the grant number or funding reference.
 
-\textbf{Funding.} All sources of funding for the work must be disclosed. For work funded by a research agency, the following information must be provided: The name of the funding agency, the name of the funding program, the title of the funded project, and the grant number or funding reference.
+\noindent\textbf{Competing interests.} All manuscripts must declare any real or perceived conflicts of interest. Competing interests may include both financial and non-financial interests such as past or present employment, consulting activity, financing, intellectual property, ownership of financial assets, or advisory roles. In the case where there are no competing interests, one can use the statement: The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 
-\textbf{Competing interests.} All manuscripts must declare any real or perceived conflicts of interest. Competing interests may include both financial and non-financial interests such as past or present employment, consulting activity, financing, intellectual property, ownership of financial assets, or advisory roles. In the case where there are no competing interests, one can use the statement: The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
-
-
-% ------ Appendix and methods -----------------------------
-\section*{Methods}
-Methods are an optional section that is used only for the letter format. The methods section must be less than 3000 words in length and contain no tables or figures.
-
+% ------ Appendix ------------------------------------------------------------
+% Letters do not have appendices
+\IfStrEq{\articletype}{LETTER}{}{
 \appendix
-\section{Appendix Title}
-Appendices are optional sections. Each table or figure in appendix should be labeled starting with the corresponding appendix letter (e.g., Table A1).
+\counterwithin{figure}{section}
+\renewcommand{\thefigure}{\thesection\arabic{figure}}
+\counterwithin{table}{section}
+\renewcommand{\thetable}{\thesection\arabic{table}}
+\counterwithin{equation}{section}
+\renewcommand{\theequation}{\thesection\arabic{equation}}
 
+\section{First appendix}
+Appendices are optional sections. Tables, figures and equations are numbered according to the appendix section letter. For example, here is Equation~\ref{eq:appendix}
+
+\begin{equation}
+ F = m a
+     \label{eq:appendix}
+\end{equation}
+
+Note that letters do not contain appendices.
+
+\section{Second appendix}
+\subsection{Appendix subsection}
+\subsubsection{Appendix subsubsection}
+
+% end appendices
+}
 
 % ------ Bibliography -------------------------------------
 \printbibliography
 
+\clearpage
+
+% ------ Methods section for LETTERS ----------------------
+\IfStrEq{\articletype}{LETTER}{
+\section*{Methods}
+The Methods section is an optional section that is used only for the letter format. The methods section must be less than 3000 words in length and contain no tables or figures.
+
+% End methods section
+}
 
 % ------ License ------------------------------------------
 % If you intend to distribute this manuscript, consider
 % adding a CC-BY license by uncommenting the following
 % line
 % \license{}
-
 
 \end{document}
