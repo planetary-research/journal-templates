@@ -154,6 +154,8 @@
 
 \DeclareRobustCommand{\upmu}{\ifmmode\text{\textmu}\else\textmu\fi}
 
+\DeclareRobustCommand{\upmu}{\ifmmode\text{\textmu}\else\textmu\fi}
+
 \newcommand{\specialissue}[1]
 {\noindent\textbf{Special issue:} #1}
 
