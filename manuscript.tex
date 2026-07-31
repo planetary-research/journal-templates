@@ -193,7 +193,7 @@ Specify contributions that require acknowledgment but that do not warrant author
 \renewcommand{\theequation}{\thesection\arabic{equation}}
 
 \section{First appendix}
-Appendices are optional sections. Tables, figures and equations are numbered according to the appendix section letter. For example, here is Equation~\ref{eq:appendix}
+Appendices are optional sections that follow the open science statements. All figures and tables in the appendix must be referenced in the text of the appendix. Figure, table, and equation numbers should be prefixed by the appendix letter (such as Figure A1). For example, here is Equation~\ref{eq:appendix}
 
 \begin{equation}
  F = m a
@@ -209,18 +209,16 @@ Note that letters do not contain appendices.
 % end appendices
 }
 
-% ------ Bibliography -------------------------------------
-\printbibliography
-
-\clearpage
-
 % ------ Methods section for LETTERS ----------------------
 \IfStrEq{\articletype}{LETTER}{
 \section*{Methods}
-The Methods section is an optional section that is used only for the letter format. The methods section must be less than 3000 words in length and contain no tables or figures.
+The Methods section is an optional section that is used only for the letter format. The methods section must be less than 3000 words in length and contain no tables or figures. The methods section is placed after the Open Science Declarations section.
 
 % End methods section
 }
+
+% ------ Bibliography -------------------------------------
+\printbibliography
 
 % ------ License ------------------------------------------
 % If you intend to distribute this manuscript, consider
