@@ -1,0 +1,36 @@
+name: upload_tarball
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-and-upload:
+    runs-on: codeberg-tiny
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: https://github.com/actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Build tarball
+        id: tarball
+        run: |
+          TAG="${{ forgejo.release.tag_name }}"
+          ARCHIVE_LATEX="planetary-research-latex-templates.tar.gz"
+          ARCHIVE_DOCX="planetary-research-docx-templates.zip"
+          tar -czf "$ARCHIVE_LATEX" \
+            README.md AGENTS.md \
+            planetary.cls manuscript.tex supplementary-materials.tex references.bib \
+            assets/by.png assets/cc.png assets/journal_logo.pdf \
+            assets/frontpage.png figures/planet.png
+          zip "$ARCHIVE_DOCX" \
+            PR_Article.docx PR_Letter.docx PR_supplemental_materials.docx
+      - name: Upload release asset
+        uses: https://github.com/softprops/action-gh-release@v2
+        with:
+          files: |
+            planetary-research-latex-templates.tar.gz
+            planetary-research-docx-templates.zip
